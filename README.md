@@ -6,4 +6,4 @@ theme.
 
 ## License
 
-Herrmit is licensed under the [MIT license](LICENSE. md)
+Herrmit is licensed under the [MIT license](LICENSE.md).
