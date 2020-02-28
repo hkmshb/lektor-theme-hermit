@@ -1,0 +1,21 @@
+{% set conf = bag('conf') %}
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit-no">
+  <meta name="author" content="{{ conf.author }}">
+  <meta name="description" content="{{ conf.description }}">
+  <meta name="keywords" content="{{ this.keywords or conf.keywords }}">
+  <meta name="theme-color" content="{{ this.theme or conf.default_theme }}">
+  <meta name="robots" content="noodp">
+  <link name="canonical" href="">
+  {% block title_wrapper -%}
+    <title>{% block title -%}
+        {{ this.site_name or 'Welcome' }} {%-
+          if this.title -%}
+          {% block subtitle %} - {{ this.title or 'Lektor Hermit' }}{% endblock %}
+        {%- endif %}
+    {%-
+      endblock %}</title>
+  {%- endblock %}
+  <link rel="stylesheet" type="text/css" href="{{ 'css/hermit.css' | asseturl }}">
+{% include "./snippets/favicons.html" -%}

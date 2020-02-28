@@ -1,21 +1,19 @@
 <!doctype html>
-<meta charset="utf-8">
-<link rel="stylesheet" href="{{ '/static/style.css'|url }}">
-<title>{% block title %}Welcome{% endblock %} — lektor-theme-hermit</title>
-<body>
-  <header>
-    <h1>lektor-theme-hermit</h1>
-    <nav>
-      <ul class="nav navbar-nav">
-        <li{% if this._path == '/' %} class="active"{% endif
-          %}><a href="{{ '/'|url }}">Welcome</a></li>
-      </ul>
-    </nav>
-  </header>
-  <div class="page">
-    {% block body %}{% endblock %}
+<html lang="en">
+<head>
+{%- include "./snippets/head.html" %}
+</head>
+<body class="{% if bag('conf').default_theme == "dark" %}dark-theme{% endif %}">
+  <div class="container">
+    {% include "./snippets/header.html" %}
+    <div class="content">
+      {% block body %}{% endblock %}
+    </div>
+    {% block footer %}
+      {% include "./snippets/footer.html" %}
+    {% endblock %}
   </div>
-  <footer>
-    &copy; Copyright 2020 by Abdulhakeem.
-  </footer>
+
+  {% include "./snippets/javascript.html" %}
 </body>
+</html>
