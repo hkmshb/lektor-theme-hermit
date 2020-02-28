@@ -1,0 +1,4 @@
+{% import "_macros.html" as macros %}
+{% for (name, path) in bag('conf').socials.items() %}
+  &nbsp; <a href="{{ path }}" target="_blank" rel="noopener" title="{{ name }}">{{ macros.social(name, path) }}</a> &nbsp;
+{% endfor %}

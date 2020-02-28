@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block body %}
+  <div aria-role="main">
+    <h1>{{ this.title }}</h1>
+    <p>{{ this.subtitle }}</p>
+    <div>
+      {% include "./snippets/social-icons.html" %}
+    </div>
+  </div>
+{% endblock %}

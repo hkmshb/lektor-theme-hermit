@@ -2,8 +2,8 @@
   <span class="header__inner">
     {% include "./snippets/logo.html" %}
     <span class="header__right">
-      {% if bag('site').menus %}
-        {% include "./menu.html" %}
+      {% if bag('menu') %}
+        {% include "./snippets/menu.html" %}
         <span class="menu-trigger">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path d="M0 0h24v24H0z" fill="none"/>
@@ -11,6 +11,9 @@
           </svg>
         </span>
       {% endif %}
+      <span class="theme-toggle unselectable">
+        {% include "./snippets/theme-icon.html" %}
+      </span>
     </span>
   </span>
 </header>

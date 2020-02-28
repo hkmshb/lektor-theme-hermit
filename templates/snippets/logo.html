@@ -1,7 +1,8 @@
-<a href="">
+{% set conf = bag('conf') %}
+<a href="{{ conf.logo.path | url }}" style="text-decoration: none;">
   <div class="logo">
     <span class="logo__mark"></span>
-    <span class="logo__text"></span>
+    <span class="logo__text">{{ conf.logo.text | safe }}</span>
     <span class="logo__cursor" style=""></span>
   </div>
 </a>

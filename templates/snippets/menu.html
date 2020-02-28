@@ -1,0 +1,7 @@
+<nav class="menu">
+  <ul class="menu__inner">
+  {%- for id, item in bag('menu').items() %}
+    <li><a href="{{ item.path | url }}">{{ item.label }}</a></li>
+  {%- endfor %}
+  </ul>
+</nav>
